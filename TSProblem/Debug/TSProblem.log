@@ -1,0 +1,55 @@
+﻿Build started 2014-07-02 17:02:55.
+     1>Project "D:\mirek\c++\Traveling Salesman Problem\TSProblem\TSProblem.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         D:\Pliki programów\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\TSProblem.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Pliki programów\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\TSProblem.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CharToIntParser.cpp CitiesPermutation.cpp ListGraph.cpp SimmulatedAnnealing.cpp TSProblem.cpp
+         TSProblem.cpp
+         SimmulatedAnnealing.cpp
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\simmulatedannealing.cpp(1): warning C4627: '#include "SimmulatedAnnealing.h"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\simmulatedannealing.cpp(19): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         ListGraph.cpp
+         CitiesPermutation.cpp
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(1): warning C4627: '#include "CitiesPermutation.h"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(5): error C2653: 'CitiesPermutation' : is not a class or namespace name
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(9): error C2065: 'permutation' : undeclared identifier
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(13): error C3861: 'permute': identifier not found
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(15): warning C4508: 'CitiesPermutation' : function should return a value; 'void' return type assumed
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(17): error C2653: 'CitiesPermutation' : is not a class or namespace name
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(17): error C2146: syntax error : missing ';' before identifier 'toString'
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(18): error C2065: 'permutation' : undeclared identifier
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(21): error C2653: 'CitiesPermutation' : is not a class or namespace name
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(22): error C2065: 'permutation' : undeclared identifier
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(22): error C2228: left of '.size' must have class/struct/union
+                 type is 'unknown-type'
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(25): error C2653: 'CitiesPermutation' : is not a class or namespace name
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(26): error C2065: 'random_device' : undeclared identifier
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(26): error C2146: syntax error : missing ';' before identifier 'device'
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(26): error C2065: 'device' : undeclared identifier
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(27): error C2065: 'uniform_int_distribution' : undeclared identifier
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(27): error C2062: type 'int' unexpected
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(32): error C2065: 'device' : undeclared identifier
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(32): error C3861: 'dist': identifier not found
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(33): error C2065: 'device' : undeclared identifier
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(33): error C3861: 'dist': identifier not found
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(35): error C3861: 'swapCities': identifier not found
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(38): error C2653: 'CitiesPermutation' : is not a class or namespace name
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(39): error C2065: 'permutation' : undeclared identifier
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(39): error C2228: left of '.size' must have class/struct/union
+                 type is 'unknown-type'
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(41): error C2061: syntax error : identifier 'exception'
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(44): error C2065: 'permutation' : undeclared identifier
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(45): error C2065: 'permutation' : undeclared identifier
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\citiespermutation.cpp(46): error C2065: 'permutation' : undeclared identifier
+         CharToIntParser.cpp
+     1>d:\mirek\c++\traveling salesman problem\tsproblem\chartointparser.cpp(11): warning C4018: '<' : signed/unsigned mismatch
+         Generating Code...
+     1>Done Building Project "D:\mirek\c++\Traveling Salesman Problem\TSProblem\TSProblem.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.36
