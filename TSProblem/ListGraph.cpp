@@ -7,9 +7,9 @@
 ListGraph::ListGraph(int size) {
 	numberOfNodes = size;
 	numberOfEdges = numberOfNodes * (numberOfNodes-1);
-	graph = new int*[numberOfNodes];
+	graph = new float*[numberOfNodes];
 	for(int i = 0; i < numberOfNodes; i++) {
-		graph[i] = new int[numberOfNodes];
+		graph[i] = new float[numberOfNodes];
 	}
 }
 
@@ -32,12 +32,12 @@ int ListGraph::size() {
 	return numberOfNodes;
 } 
 
-int ListGraph::overallPath(std::string path) {
+float ListGraph::overallPath(std::string path) {
 	CharToIntParser parser;
 
 	int* nodes = parser.parse(path);
 	int size = path.size();
-	int pathLength = 0;
+	float pathLength = 0;
 	for(int i = 0; i < size-1; i++){
 		pathLength += graph[nodes[i]][nodes[i+1]];
 	}
@@ -78,13 +78,13 @@ void ListGraph::resizeGraph(int newSize) {
 		}
 		delete[] graph;
 	}
-	graph = new int*[newSize];
+	graph = new float*[newSize];
 	for(int i = 0; i < newSize; i++) {
-		graph[i] = new int[newSize];
+		graph[i] = new float[newSize];
 	}
 }
 
-int ListGraph::getPathLength(int startNode, int endNode) {
+float ListGraph::getPathLength(int startNode, int endNode) {
 	return graph[startNode][endNode];
 }
 
@@ -92,4 +92,14 @@ int ListGraph::getPathLength(int startNode, int endNode) {
 bool ListGraph::isComplete() {
 	int maxNumberOfEdges = numberOfNodes*(numberOfNodes-1);
 	return maxNumberOfEdges == numberOfEdges;
+}
+
+void ListGraph::print(std::ostream& output) {
+	for(int i = 0; i < numberOfNodes; i++) {
+		for(int j = 0; j < numberOfNodes; j++) {
+			output << graph[i][j] <<" ";
+		}
+		output << std::endl;
+	}
+	output << std::endl;
 }

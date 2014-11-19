@@ -8,7 +8,7 @@
 class SimmulatedAnnealing {
 	ListGraph* graph;
 	int size;
-	const int e = 2.71828182846;
+	const float e = 2.71828182846;
 	const float minimalTemp = 0.001;
 	CitiesPermutation permutation;
 	

@@ -1,5 +1,5 @@
-#include "CitiesPermutation.h"
 #include "stdafx.h"
+#include "CitiesPermutation.h"
 #include <random>
 
 CitiesPermutation::CitiesPermutation(int numberOfCities) {

@@ -1,5 +1,8 @@
+#include "stdafx.h"
 #include "SimmulatedAnnealing.h"
 #include <random>
+#include <iostream>
+
 SimmulatedAnnealing::SimmulatedAnnealing() {
 	size = 0;
 	graph = nullptr;
@@ -33,11 +36,11 @@ void SimmulatedAnnealing::loadGraphFromFile(string path) {
 }
 
 int SimmulatedAnnealing::runAlgorithm() {
-	int actualPoint = findStartingPoint();
-	int bestKnownAnswer, currentAnswer;
-
+	float actualPoint = findStartingPoint();
+	float bestKnownAnswer, currentAnswer;
+	graph->print(std::cout);
 	permutation.randomPermutation();
-		
+	string bestPermutation;
 	currentAnswer = bestKnownAnswer = graph->overallPath(permutation.toString());
 	
 	random_device dev;
@@ -50,12 +53,14 @@ int SimmulatedAnnealing::runAlgorithm() {
 		
 			if(tempAnswer < bestKnownAnswer) {
 				bestKnownAnswer = tempAnswer;
+				bestPermutation = permutation.toString();
 			}
 		} else if(dist(dev) < stepProbability(tempAnswer, currentAnswer, actualPoint)) {
 			currentAnswer = tempAnswer;
 		}
 		actualPoint *= 0.99999;
 	}
+	cout << bestPermutation;
 	return bestKnownAnswer;
 }
 

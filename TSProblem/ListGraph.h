@@ -2,11 +2,11 @@
 
 
 #include <string>
-
+#include <ostream>
 class ListGraph {
 	int numberOfNodes;
 	int numberOfEdges;
-	int **graph;
+	float **graph;
 	void resizeGraph(int);
 public:
 	ListGraph(int);
@@ -14,7 +14,8 @@ public:
 	~ListGraph();
 	void loadFromFile(std::string);
 	int size();
-	int getPathLength(int, int);
-	int overallPath(std::string);
+	float getPathLength(int, int);
+	float overallPath(std::string);
 	bool isComplete();
+	void  print(std::ostream&);
 };
