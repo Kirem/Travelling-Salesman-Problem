@@ -16,11 +16,14 @@ class SimmulatedAnnealing {
 	int findStartingPoint();
 public:
 	SimmulatedAnnealing();
+	SimmulatedAnnealing(ListGraph*);
 	virtual ~SimmulatedAnnealing();
 	int add();
 	int getProblemSize();
 	void loadGraphFromFile(std::string);
 	int runAlgorithm();
+	void createRandomGraph(int);
+	void printGraph(std::ostream&);
 
 
 };

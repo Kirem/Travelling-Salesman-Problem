@@ -6,6 +6,7 @@ class CitiesPermutation {
 public:
 	CitiesPermutation();
 	CitiesPermutation(int);
+	CitiesPermutation(CitiesPermutation&);
 	virtual ~CitiesPermutation() {}
 	string toString();
 	int size();

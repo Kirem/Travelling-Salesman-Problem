@@ -1,4 +1,14 @@
-﻿  TSProblem.cpp
+﻿  SimmulatedAnnealing.cpp
 d:\mirek\c++\traveling salesman problem\tsproblem\simmulatedannealing.h(11): warning C4305: 'initializing' : truncation from 'double' to 'const float'
 d:\mirek\c++\traveling salesman problem\tsproblem\simmulatedannealing.h(12): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+d:\mirek\c++\traveling salesman problem\tsproblem\simmulatedannealing.cpp(57): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+d:\mirek\c++\traveling salesman problem\tsproblem\simmulatedannealing.cpp(68): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+d:\mirek\c++\traveling salesman problem\tsproblem\simmulatedannealing.cpp(70): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+d:\mirek\c++\traveling salesman problem\tsproblem\simmulatedannealing.cpp(73): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+d:\mirek\c++\traveling salesman problem\tsproblem\simmulatedannealing.cpp(76): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+d:\mirek\c++\traveling salesman problem\tsproblem\simmulatedannealing.cpp(77): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+d:\mirek\c++\traveling salesman problem\tsproblem\simmulatedannealing.cpp(81): warning C4305: '*=' : truncation from 'double' to 'float'
+d:\mirek\c++\traveling salesman problem\tsproblem\simmulatedannealing.cpp(84): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+d:\mirek\c++\traveling salesman problem\tsproblem\simmulatedannealing.cpp(93): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+d:\mirek\c++\traveling salesman problem\tsproblem\simmulatedannealing.cpp(98): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
   TSProblem.vcxproj -> D:\mirek\c++\Traveling Salesman Problem\Debug\TSProblem.exe

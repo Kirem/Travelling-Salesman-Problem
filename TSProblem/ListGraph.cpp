@@ -1,13 +1,18 @@
 #include "stdafx.h"
 #include "ListGraph.h"
 #include <fstream>
-#include <iostream>
+#include <random>
 #include "CharToIntParser.h"
+#include <string>
+#include <sstream>
 
+
+using namespace std;
 ListGraph::ListGraph(int size) {
 	numberOfNodes = size;
 	numberOfEdges = numberOfNodes * (numberOfNodes-1);
 	graph = new float*[numberOfNodes];
+	randomInterval = make_pair(10, 100);
 	for(int i = 0; i < numberOfNodes; i++) {
 		graph[i] = new float[numberOfNodes];
 	}
@@ -17,6 +22,7 @@ ListGraph::ListGraph() {
 	numberOfNodes = 0;
 	numberOfEdges = 0;
 	graph = nullptr;
+	randomInterval = make_pair(10, 100);
 }
 
 ListGraph::~ListGraph() {
@@ -53,22 +59,77 @@ void ListGraph::loadFromFile(std::string path) {
 	}
 	int numberOfNodes;
 	int numberOfEdges = 0;
-	graphToLoad >> numberOfNodes;
+	string checker;
+	graphToLoad >> checker;
+	if(checker.compare("NAME:") == 0) {
+		loadSymetricTestGraph(graphToLoad);
+	} else {
+		std::istringstream stream(checker);
+		int size;
+		stream >> size;
+		loadGraph(graphToLoad, size);
+	}
 
+
+	graphToLoad.close();
+}
+
+void ListGraph::loadGraph(std::istream &str, int size) {
 	resizeGraph(numberOfNodes);
-	this->numberOfNodes = numberOfNodes;
+	this->numberOfNodes = size;
 
 	for(int i = 0; i < numberOfNodes; i++) {
 		int length;
 		for(int j = 0; j < numberOfNodes; j++) {
-			graphToLoad >> length;
+			str >> length;
 			graph[i][j] = length;
 			if(length > 0)
 				numberOfEdges++;
 		}
 	}
 	this->numberOfEdges = numberOfEdges;
-	graphToLoad.close();
+}
+
+void ListGraph::loadSymetricTestGraph(std::istream& stream) {
+	string s;
+	while(s.compare("DIMENSION:") != 0) {
+		stream >> s;
+	}
+	int size;
+	stream >> size;
+	this->numberOfNodes = size;
+	resizeGraph(size);
+	while(s.compare("EDGE_WEIGHT_SECTION") != 0) {
+		stream >> s;
+	}
+	for(int i = 0; i < size; i++) {
+		for(int j = 0; j < i + 1; j++) {
+			int value;
+			stream >> value;
+			graph[i][j] = graph[j][i] = value;
+		}
+	}
+}
+
+void ListGraph::createRandomGraph(int size) {
+	random_device device;
+	uniform_int_distribution<int> distribution(randomInterval.first, randomInterval.second);
+	numberOfNodes = size;
+	numberOfEdges = 0;
+	resizeGraph(numberOfNodes);
+
+	for(int i = 0; i < numberOfNodes; i++) {
+		for(int j = i; j < numberOfNodes; j++) {
+			if(j==i) {
+				graph[i][j] = 0;
+				continue;
+			}
+
+			int pathValue = distribution(device);
+			graph[i][j] = graph[j][i] = pathValue;
+			numberOfEdges++;
+		}
+	}
 }
 
 void ListGraph::resizeGraph(int newSize) {

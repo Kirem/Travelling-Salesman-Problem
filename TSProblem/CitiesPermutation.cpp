@@ -20,6 +20,10 @@ CitiesPermutation::CitiesPermutation() {
 	permutation = "";
 }
 
+CitiesPermutation::CitiesPermutation(CitiesPermutation& perm) {
+	this->permutation = perm.permutation;
+}
+
 string CitiesPermutation::toString() {
 	return permutation;
 }
